@@ -1,0 +1,24 @@
+<div id="c1"></div>
+<nz-card nzBordered="false">
+  <nz-table
+    *ngIf="true"
+    #basicTable
+    [nzData]="listOfData"
+    [nzTotal]="listOfData.length"
+  >
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Step</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.id }}</td>
+        <td>{{ data.step }}</td>
+        <td>{{ data.result }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>
