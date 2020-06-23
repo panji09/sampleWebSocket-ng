@@ -1,5 +1,24 @@
 <div id="c1"></div>
 <nz-card nzBordered="false">
+  <button
+    *ngIf="isConnected === false"
+    nz-button
+    nzType="primary"
+    [nzLoading]="loading.start"
+    (click)="clickStart()"
+  >
+    Start
+  </button>
+  <button
+    *ngIf="isConnected === true"
+    nz-button
+    nzType="primary"
+    nzDanger="true"
+    [nzLoading]="loading.stop"
+    (click)="clickStop()"
+  >
+    Stop
+  </button>
   <nz-table
     *ngIf="true"
     #basicTable

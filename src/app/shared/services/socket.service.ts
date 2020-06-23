@@ -49,6 +49,8 @@ export class SocketService implements OnDestroy {
 
   disconnect() {
     if (this.isConnected) {
+      this.isConnected = false;
+      this.statusConnection.next(this.isConnected);
       this.unSubscribe();
       this.ws.close();
     }
